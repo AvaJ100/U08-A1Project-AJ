@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Vector2 groundCheckSize;
     [SerializeField] private LayerMask groundLayers;
 
+    public StarManager cm;
+
     // component references
     private PlayerInput playerInput;
     private Rigidbody2D rb2d;
@@ -99,5 +101,14 @@ public class PlayerController : MonoBehaviour
     private bool CheckIfOnGround()
     {
         return Physics2D.OverlapBox(transform.position, groundCheckSize, 0f, groundLayers);
+    }
+
+    void OnTriigerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Star"))
+        {
+            Destroy(other.gameObject);
+            cm.starCount++;
+        }
     }
 }
