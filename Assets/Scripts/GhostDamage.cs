@@ -1,16 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public class GhostDamage : MonoBehaviour
 {
     public int damage;
     public PlayerHealth playerHealth;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
-            playerHealth.TakeDamage(damage);
+            PlayerHealth health = collision.gameObject.GetComponent<PlayerHealth>();
+
+            if (health != null)
+            {
+                health.TakeDamage(damage);
+            }
+            else
+            {
+                Debug.LogWarning("Player object collided but has no PlayerHealth component.");
+            }
         }
     }
 }

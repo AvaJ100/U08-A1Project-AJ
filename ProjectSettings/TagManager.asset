@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Star
+  - Ghost
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -14,8 +16,8 @@ TagManager:
   - UI
   - Ground
   - Star
-  - 
-  - 
+  - Player
+  - Enemy
   - 
   - 
   - 

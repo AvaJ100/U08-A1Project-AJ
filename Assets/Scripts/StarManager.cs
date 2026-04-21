@@ -1,19 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class StarManager : MonoBehaviour
 {
-    public int starCount;
-    // Start is called once before the first frame update
-    void Start()
+    public static StarManager instance;  
+    public int starCount = 0;            
+
+    private void Awake()
     {
-        
+        instance = this;                 
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AddStar()
     {
-        
+        starCount++;
+        Debug.Log("Stars: " + starCount);
     }
 }
+
+
