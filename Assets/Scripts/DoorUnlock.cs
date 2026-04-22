@@ -7,6 +7,7 @@ public class DoorUnlock : MonoBehaviour
         if (other.CompareTag("Player") && KeyManager.hasKey)
         {
             Debug.Log("Door unlocked!");
+            // Option 1: Destroy door
             Destroy(gameObject);
         }
     }
