@@ -1,40 +1,29 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
-
-    public int score = 0;
     public GameObject gameOverPanel;
-    public TMPro.TextMeshProUGUI finalScoreText;
+    public TMP_Text ScoreText;
+    public TMP_Text HealthText;
 
-    private void Awake()
-    {
-        instance = this;
-    }
+    public int starsCollected;
+    public int playerHealth;
 
-    public void AddScore(int amount)
+    void Start()
     {
-        score += amount;
+        gameOverPanel.SetActive(false);
     }
 
     public void GameOver()
     {
-        Time.timeScale = 0f; // freeze game
+        Debug.Log("GAME OVER TRIGGERED");
+
+        ScoreText.text = "Stars: " + starsCollected;
+        HealthText.text = "Health: " + playerHealth;
+
         gameOverPanel.SetActive(true);
-        finalScoreText.text = "Score: " + score;
-    }
-
-    public void Retry()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-    public void MainMenu()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 0f;
     }
 }
+  

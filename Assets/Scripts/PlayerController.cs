@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask groundLayers;
 
     public StarManager cm;
+    public int health = 10;
+    public GameManager gameManager;
 
     // component references
     private PlayerInput playerInput;
@@ -109,6 +111,15 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(other.gameObject);
             cm.starCount++;
+        }
+        if (other.gameObject.CompareTag("Ghost"))
+        {
+            health--;
+            gameManager.playerHealth = health;
+            if (health <=0)
+            {
+                gameManager.GameOver();
+            }
         }
     }
 }
