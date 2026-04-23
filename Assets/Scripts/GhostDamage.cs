@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GhostDamage : MonoBehaviour
 {
-    public int damage;
+    public int damage = 1;
     public PlayerHealth playerHealth;
 
     public void OnCollisionEnter2D(Collision2D collision)

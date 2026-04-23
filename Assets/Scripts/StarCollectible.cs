@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class StarCollectible : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D other)
+    public int value = 1;
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
-            Debug.Log("Star collected!");
-            StarManager.instance.AddStar();
+            GameManager.instance.AddScore(value);
             Destroy(gameObject);
         }
     }

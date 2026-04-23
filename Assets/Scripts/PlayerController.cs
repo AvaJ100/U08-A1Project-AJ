@@ -94,8 +94,8 @@ public class PlayerController : MonoBehaviour
     private void OnJumpReleased(InputAction.CallbackContext context)
     {
         if (rb2d.linearVelocity.y > 0)
-        { 
-                    rb2d.linearVelocity = new Vector2(rb2d.linearVelocity.x, rb2d.linearVelocity.y / 2);
+        {
+            rb2d.linearVelocity = new Vector2(rb2d.linearVelocity.x, rb2d.linearVelocity.y / 2);
         }
     }
 
@@ -105,21 +105,17 @@ public class PlayerController : MonoBehaviour
         return Physics2D.OverlapBox(transform.position, groundCheckSize, 0f, groundLayers);
     }
 
-    void OnTriigerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Star"))
+        if (other.CompareTag("Star"))
         {
+            GameManager.instance.AddScore(1);
             Destroy(other.gameObject);
-            cm.starCount++;
         }
-        if (other.gameObject.CompareTag("Ghost"))
+
+        if (other.CompareTag("Ghost"))
         {
-            health--;
-            gameManager.playerHealth = health;
-            if (health <=0)
-            {
-                gameManager.GameOver();
-            }
+            GetComponent<PlayerHealth>().TakeDamage(1);
         }
     }
 }
