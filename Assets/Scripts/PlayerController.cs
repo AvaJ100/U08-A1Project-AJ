@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Vector2 groundCheckSize;
     [SerializeField] private LayerMask groundLayers;
 
-    public StarManager cm;
     public int health = 10;
     public GameManager gameManager;
 

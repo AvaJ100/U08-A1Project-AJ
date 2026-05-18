@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -7,6 +6,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public int score = 0;
+    public int health = 3;
+
     public GameObject gameOverPanel;
     public TextMeshProUGUI finalScoreText;
 
@@ -18,19 +19,26 @@ public class GameManager : MonoBehaviour
     public void AddScore(int amount)
     {
         score += amount;
+
+        Debug.Log("Score: " + score);
+    }
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+
+        if (health <= 0)
+        {
+            GameOver();
+        }
     }
 
     public void GameOver()
     {
-        Time.timeScale = 0f;
         gameOverPanel.SetActive(true);
-        finalScoreText.text = "Score: " + score;
-    }
 
-    public void Retry()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        finalScoreText.text = "Final Score: " + score;
+
+        Time.timeScale = 0f;
     }
 }
-

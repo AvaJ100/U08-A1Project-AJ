@@ -9,8 +9,8 @@ public class StarCollectible : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             GameManager.instance.AddScore(value);
+
             Destroy(gameObject);
         }
     }
 }
-
