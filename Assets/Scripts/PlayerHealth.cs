@@ -1,19 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int lives = 3;
+    public int currentHealth = 3;
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(int damage)
     {
-        lives -= amount;
+        currentHealth -= damage;
 
-        if (lives <= 0)
-        {
-            GameManager.instance.GameOver();
-        }
+        GameManager.instance.TakeDamage(damage);
     }
 }
-

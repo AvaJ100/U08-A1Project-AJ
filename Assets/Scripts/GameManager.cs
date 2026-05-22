@@ -9,11 +9,18 @@ public class GameManager : MonoBehaviour
     public int health = 3;
 
     public GameObject gameOverPanel;
+
     public TextMeshProUGUI finalScoreText;
+    public TextMeshProUGUI finalHealthText;
 
     private void Awake()
     {
         instance = this;
+    }
+
+    private void Start()
+    {
+        gameOverPanel.SetActive(false);
     }
 
     public void AddScore(int amount)
@@ -27,17 +34,20 @@ public class GameManager : MonoBehaviour
     {
         health -= damage;
 
+        Debug.Log("Health: " + health);
+
         if (health <= 0)
         {
-            GameOver();
+            ShowGameOver();
         }
     }
 
-    public void GameOver()
+    public void ShowGameOver()
     {
         gameOverPanel.SetActive(true);
 
-        finalScoreText.text = "Final Score: " + score;
+        finalScoreText.text = "Stars Collected: " + score;
+        finalHealthText.text = "Lives Remaining: " + health;
 
         Time.timeScale = 0f;
     }

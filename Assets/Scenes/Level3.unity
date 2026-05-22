@@ -1346,7 +1346,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c722fa5af5d969b48952c8eb62ecca3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StarCollectible
-  value: 1
 --- !u!212 &789324160
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1498,7 +1497,6 @@ MonoBehaviour:
   groundLayers:
     serializedVersion: 2
     m_Bits: 64
-  cm: {fileID: 2035115034}
   health: 10
   gameManager: {fileID: 0}
 --- !u!114 &966627187
@@ -1616,7 +1614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a476d32d51635224c9c4a77511fa84d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  lives: 3
+  currentHealth: 3
 --- !u!212 &966627191
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1769,6 +1767,64 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7049950774323038407, guid: 6b00bf5a35d1f0646931bab53302f835, type: 3}
   m_PrefabInstance: {fileID: 1043778095}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1143087854
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 973673587041777998, guid: 2152053a22fcaf447b5d039454904812, type: 3}
+      propertyPath: m_Name
+      value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4946095005207426858, guid: 2152053a22fcaf447b5d039454904812, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 522
+      objectReference: {fileID: 0}
+    - target: {fileID: 4946095005207426858, guid: 2152053a22fcaf447b5d039454904812, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 251.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4946095005207426858, guid: 2152053a22fcaf447b5d039454904812, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4946095005207426858, guid: 2152053a22fcaf447b5d039454904812, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4946095005207426858, guid: 2152053a22fcaf447b5d039454904812, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4946095005207426858, guid: 2152053a22fcaf447b5d039454904812, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4946095005207426858, guid: 2152053a22fcaf447b5d039454904812, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4946095005207426858, guid: 2152053a22fcaf447b5d039454904812, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4946095005207426858, guid: 2152053a22fcaf447b5d039454904812, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4946095005207426858, guid: 2152053a22fcaf447b5d039454904812, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 4705584254763986010, guid: 2152053a22fcaf447b5d039454904812, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2152053a22fcaf447b5d039454904812, type: 3}
 --- !u!1001 &1285447006
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2178,7 +2234,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c722fa5af5d969b48952c8eb62ecca3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StarCollectible
-  value: 1
 --- !u!212 &1549074085
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2316,7 +2371,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c722fa5af5d969b48952c8eb62ecca3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StarCollectible
-  value: 1
 --- !u!212 &1566475714
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2766,7 +2820,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0b151a2431a6354bb35a5a33220a510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starCount: 8
 --- !u!4 &2035115035
 Transform:
   m_ObjectHideFlags: 0
@@ -2842,3 +2895,4 @@ SceneRoots:
   - {fileID: 1566475715}
   - {fileID: 1549074086}
   - {fileID: 789324161}
+  - {fileID: 1143087854}
