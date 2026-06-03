@@ -1,5 +1,7 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -20,7 +22,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        gameOverPanel.SetActive(false);
+        gameOverPanel.SetActive(true);
     }
 
     public void AddScore(int amount)
@@ -50,5 +52,11 @@ public class GameManager : MonoBehaviour
         finalHealthText.text = "Lives Remaining: " + health;
 
         Time.timeScale = 0f;
+    }
+
+    public void RetryToTestLevel()
+    {
+        Time.timeScale = 1f; 
+        SceneManager.LoadScene("TestLevel");
     }
 }

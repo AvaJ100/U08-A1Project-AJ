@@ -355,7 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f00219296d2c69e44bfeb75fbb3e01e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Door
-  sceneToLoad: GameOver
+  sceneToLoad: EndScene
 --- !u!114 &241742659
 MonoBehaviour:
   m_ObjectHideFlags: 0
